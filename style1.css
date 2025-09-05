@@ -15,14 +15,11 @@ body {
 
 /* First header */
 header.main-header {
-  display: flex; /* corrected from flexbox */
-  align-items: center;
-  background-color: #fa8f04;
+  display:flexbox;  
+  align-items: center;         
+  background-color: #fa8f04;   
   width: 100%;
-  height: auto;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 10px 20px;
+  height: 12vh;
 }
 
 #logo {
@@ -288,4 +285,5 @@ button[type="submit"]:hover {
 
   .page {padding: 30px 15px;}
   }
+
 
