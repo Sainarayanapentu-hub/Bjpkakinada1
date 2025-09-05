@@ -1,202 +1,290 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
+  color: #000000;
+  font-family: "Noto Sans Telugu", Arial, sans-serif;
   background: #f9f9f9;
-  padding: 0;
-  margin: 0;
+}
+:root {
+  --primary: #15b800; 
 }
 
-/* Header and Logo */
-.main-header {
-  background-color: #f26522;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-}
-
-.logo-container {
-  display: flex;
-  flex-direction: column;
+/* First header */
+header.main-header {
+  display: flex; /* corrected from flexbox */
   align-items: center;
+  background-color: #fa8f04;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
 #logo {
-  width: 80px;
-  height: auto;
-  margin-bottom: 10px;
+  margin: 15px; 
+  float:left;
+  height: 110px;
+  width: 180px;
+  border-radius: 50%; 
 }
-
+/* Banner */
 .banner {
-  font-size: 20px;
-  text-align: center;
-}
-
-#circle {
-  width: 80px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-#photo {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-/* Navigation */
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   gap: 10px;
-  padding: 10px;
-  background-color: #fff;
+}
+.banner img {
+  border-radius: 50%;
+  height: 65px;
 }
 
 .main-nav button {
-  padding: 10px 15px;
+  margin: 0 8px;
+  background: #fcce02;
+  color: #000;
+  padding: 8px 18px;
   border: none;
-  background-color: #f26522;
-  color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
 }
-
 .main-nav button:hover {
-  background-color: #d1541a;
+  background: #ffa808;
 }
 
-/* Form Section */
-.container {
-  max-width: 700px;
-  margin: 20px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+
+nav ul {
+  list-style: none; 
+  display: flex;
+  gap: 150px;
+}
+nav ul li img {
+  height: 65px;
+  width: 90px;
+  border-radius: 6px;
 }
 
-form label {
+/* Third header */
+header.main-nav {
+  background: #ffa500;
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header.main-nav button {
+  margin: 0 8px;
+  background: #fcce02;
+  color: #000;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+header.main-nav button:hover {
+  background: #ffa808;
+}
+
+/* Page sections */
+.page {
+  background-image: url("bjp-backgrkund.png");
+  background-size: cover; 
+  display: none;
+  padding: 50px;
+  min-height: 100vh;
+  text-align: center;
+}
+.active {
   display: block;
-  margin-top: 10px;
+}
+#Register {
+  background: #fde68a;
+   
+}
+#News { background: #fde68a; }
+#about { background: #bbf7d0; }
+#Events { background: #fecdd3; }
+
+
+/* Form */
+.container {
+  max-width: 500px;
+  margin: 30px auto;
+  background: #dfd0cc;
+  padding: 24px;
+  border-radius: 8px;
+  text-align: left;
+}
+h2 {
+  text-align: center; 
+  color: #ffa500;
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  margin-bottom: 8px;
   font-weight: bold;
 }
-
-form input,
-form textarea,
-form select {
+input, select, textarea {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  padding: 7px;
+  margin-bottom: 14px;
+  border-radius: 4px;
+  border: 1px solid #a19d9d;
 }
-
-form button[type="submit"] {
-  margin-top: 20px;
-  padding: 12px 20px;
-  background-color: #f26522;
+button[type="submit"] {
+  background: #7c7c7b;
+  color: #000;
+  padding: 8px 22px;
   border: none;
-  color: white;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 34px;
+  cursor: pointer; 
+}
+button[type="submit"]:hover {
+  background: #ffa500;
 }
 
-form button[type="submit"]:hover {
-  background-color: #d1541a;
-}
-
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-}
-
-/* Social Icons */
+/* Social icons */
 .social-icons {
-  text-align: center;
-  margin: 20px 0;
+  position: fixed;  
+  top: 40%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
 }
-
 .social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #25D366; /* WhatsApp */
   color: white;
-  background-color: #25d366;
-  padding: 10px 15px;
-  border-radius: 50%;
-  margin: 0 10px;
-  display: inline-block;
-  font-size: 20px;
+  text-decoration: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 24px;
+  transition: 0.3s;
 }
-
 .social-icons a.facebook {
-  background-color: #3b5998;
+  background: #1877F2; /* Facebook */
 }
-
-/* RESPONSIVE STYLES */
-@media (max-width: 768px) {
-  .main-nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #photo {
-    width: 50px;
-    height: 50px;
-  }
-
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+/* -------------------- */
+/* ✅ Tablets (max 1024px) */
+/* -------------------- */
+@media (max-width: 1024px) {
   .banner {
-    font-size: 16px;
+    font-size: 1.8rem;
+    text-align: center;
   }
 
-  form input,
-  form textarea,
-  form select {
-    font-size: 14px;
+  nav ul {
+    gap: 40px;
+    flex-wrap: wrap;
   }
 
-  form button[type="submit"] {
-    font-size: 14px;
-    padding: 10px 16px;
-  }
-}
-
-@media (max-width: 480px) {
   #logo {
-    width: 60px;
+    width: 120px;
+    height: 90px;
   }
 
-  #circle {
-    width: 60px;
+  .container {
+    width: 90%;
+    padding: 20px;
   }
 
-  #photo {
-    width: 45px;
-    height: 45px;
-  }
-
-  .banner {
-    font-size: 14px;
+  input, select, textarea {
+    font-size: 16px;
   }
 
   .main-nav button {
     font-size: 14px;
-    padding: 8px 12px;
+  }
+}
+
+/* -------------------- */
+/* ✅ Mobile Devices (max 768px) */
+/* -------------------- */
+@media (max-width: 768px) {
+  header.main-header {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  #logo {
+    float: none;
+    margin: 10px 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  .banner {
+    font-size: 1.3rem;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .banner img {
+    height: 50px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  header.main-nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .main-nav button {
+    margin: 5px 0;
+    width: 90%;
   }
 
   .container {
-    margin: 10px;
+    width: 90%;
     padding: 15px;
+    margin: 20px auto;
   }
-}
+
+  input, select, textarea {
+    font-size: 14px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .social-icons {
+    top: unset;
+    bottom: 15px;
+    right: 10px;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 50%;
+  }
+
+  .page {padding: 30px 15px;}
+  }
