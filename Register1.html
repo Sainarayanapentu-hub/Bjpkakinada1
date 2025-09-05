@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style1.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="bjp-7290.png" />
+  <title>భారతీయ జనతా పార్టీ – కాకినాడ</title>
+</head>
+<body>
+  <header class="main-header">  
+    <div class="logo-container">
+      <a href="#">
+        <img id="logo" src="bjp-7290.png" alt="Bharatiya Janata Party Logo">
+      </a>
+      <h1 class="banner">
+        <img id="circle" src="Media.jpg" alt="Centered media image">
+        Bharatiya Janata Party – Kakinada AP
+        <a href="#">
+        <img id="photo" src="IMG-20250904-WA0006.jpg" alt="Bharatiya Janata Party Logo">
+        <img id="photo" src="IMG-20250904-WA0007.jpg" alt="Bharatiya Janata Party Logo">
+        <img id="photo" src="IMG-20250904-WA0008.jpg" alt="Bharatiya Janata Party Logo">
+      </a>
+      </h1>
+    </div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><button onclick="showPage('Membership')"> Membership / నమోదు చేసుకోండి</button></li>
+        <li><button onclick="showPage('News')">News / వార్తలు</button></li>
+        <li><button onclick="showPage('about')">About us / మా గురించి</button></li>
+        <li><button onclick="showPage('Events')">Events / ఈవెంట్స్</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="Membership" class="page active">
+      <div class="container">
+        <h2>భారతీయ జనతా పార్టీ – కాకినాడ</h2>
+        <form id="bjp-form">
+          <label for="name">పూర్తి పేరు</label>
+          <input type="text" id="name" name="name" placeholder="మీ పూర్తిపేరు ఇవ్వండి" required>
+
+          <label for="fathername">తండ్రి/తల్లి/భర్త పేరు</label>
+          <input type="text" id="fathername" name="Fathername" placeholder="తండ్రి పేరు నమోదు చేయండి">
+
+          <label for="Age">వయస్సు</label>
+          <input type="number" id="Age" name="Age" placeholder="వయస్సు" min="0">
+
+          <label for="gender">లింగం</label>
+          <select id="gender" name="Gender" required>
+            <option value="">ఎంచుకోండి</option>
+            <option value="male">పురుషుడు</option>
+            <option value="female">స్త్రీ</option>
+            <option value="other">ఇతర</option>
+          </select>
+
+          <label for="address">చిరునామా</label>
+          <textarea id="address" name="Address" rows="3" placeholder="పూర్తి చిరునామా నమోదు చేయండి" required></textarea>
+
+          <label for="Village">గ్రామం</label>
+          <input type="text" id="Village" name="Village" placeholder="గ్రామం" required>
+
+          <label for="mandal">మండలం</label>
+          <input type="text" id="mandal" name="Mandal" placeholder="మండలం" required>
+
+          <label for="district">జిల్లా</label>
+          <input type="text" id="district" name="District" placeholder="జిల్లా" required>
+
+          <label for="state">రాష్ట్రం</label>
+          <input type="text" id="state" name="State" placeholder="రాష్ట్రం" required>
+
+          <label for="contact">ఫోన్ నంబర్</label>
+          <input type="tel" id="contact" name="Contact" placeholder="ఫోన్ నంబర్ నమోదు చేయండి" required>
+
+          <label for="Profession">వృత్తి</label>
+          <input type="text" id="Profession" name="Profession" placeholder="మీ వృత్తిని నమోదు చేయండి">
+
+          <label for="Bloodgroup">రక్త సమూహం</label>
+          <select id="Bloodgroup" name="Bloodgroup" required>
+            <option value="">ఎంచుకోండి</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+          </select>
+
+          <button type="submit">నమోదు చేయండి</button>
+        </form>
+        <p id="response"></p>
+      </div>
+    </section>
+
+
+    <section id="News" class="page">
+      <h1>News / వార్తలు</h1>
+      <p>Details about News updated.</p>
+    </section>
+
+    <section id="about" class="page">
+      <h1>About Us</h1>
+      <p>Information about us.</p>
+    </section>
+
+    <section id="Events" class="page">
+      <h1>Events / ఈవెంట్స్</h1>
+      <p>Events details here.</p>
+    </section>
+  </main>
+
+  <div class="social-icons">
+    <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://facebook.com/yourpage" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+  </div>
+
+  <script>
+    // Missing showPage() function is now defined
+    function showPage(pageId) {
+      // Hide all pages
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        page.classList.remove('active');
+      });
+
+      // Show the selected page
+      const activePage = document.getElementById(pageId);
+      if (activePage) {
+        activePage.classList.add('active');
+      }
+    }
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbw4is6rnvyhLHAtGCRascnRrYJXlfrFO8LYygYVc8EkB2zrw9nuAuZxyo2hcPm-9jox/exec";
+    const form = document.getElementById("bjp-form"); // Using a new ID for clarity
+    const responseMessage = document.getElementById("response");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      
+      // Correctly create FormData from the form
+      const formData = new FormData(form);
+
+      // Display a loading message
+      responseMessage.textContent = "Processing...";
+      responseMessage.style.color = "blue";
+      
+      fetch(scriptURL, { method: "POST", body: formData })
+        .then(response => {
+          if (response.ok) {
+            responseMessage.textContent = "Submitted Successfully!";
+            responseMessage.style.color = "green";
+            form.reset(); // Clear the form on success
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        })
+        .catch(error => {
+          console.error("Error!", error.message);
+          responseMessage.textContent = "Something went wrong. Please try again!";
+          responseMessage.style.color = "red";
+        });
+    });
+  </script>
+</body>
+</html>
