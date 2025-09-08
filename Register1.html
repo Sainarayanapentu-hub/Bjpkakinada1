@@ -152,7 +152,7 @@
       fetch(scriptURL, { method: "POST", body: formData })
         .then(response => {
           if (response.ok) {
-            responseMessage.textContent = "Submitted Successfully!";
+            responseMessage.textContent = "విజయవంతంగా సమర్పించబడింది - Submitted Successfully!";
             responseMessage.style.color = "green";
             form.reset(); // Clear the form on success
           } else {
@@ -169,6 +169,7 @@
 </body>
 
 </html>
+
 
 
 
