@@ -173,6 +173,9 @@ button[type="submit"]:hover {
 .social-icons a.facebook {
   background: #1877F2; /* Facebook */
 }
+.social-icons a .fa-x-twitter {
+  color: #000; /* X (Twitter) Black */
+}
 .social-icons a:hover {
   transform: scale(1.1);
 }
@@ -285,5 +288,6 @@ button[type="submit"]:hover {
 
   .page {padding: 30px 15px;}
   }
+
 
 
