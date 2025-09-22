@@ -7,6 +7,27 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" href="bjp-7290.png" />
   <title>భారతీయ జనతా పార్టీ – కాకినాడ</title>
+  <script>
+async function translateText(text, sourceLang, targetLang) {
+  const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=YOUR_API_KEY`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      q: text,
+      source: sourceLang,
+      target: targetLang,
+      format: 'text'
+    })
+  });
+  const data = await response.json();
+  return data.data.translations[0].translatedText;
+}
+
+// Example usage:
+translateText("నమస్కారం", "te", "hi").then(result => console.log("Telugu → Hindi:", result));
+translateText("नमस्कार", "hi", "en").then(result => console.log("Hindi → English:", result));
+</script>
+
 </head>
 <body>
   <header class="main-header">  
@@ -172,6 +193,7 @@
 </body>
 
 </html>
+
 
 
 
