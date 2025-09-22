@@ -5,30 +5,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>భారతీయ జనతా పార్టీ – కాకినాడ</title>
-  <div id="google_translate_element"></div>
+  <h1 id="text-te">భారతీయ జనతా పార్టీ – కాకినాడ</h1>
+<h1 id="text-hi" style="display:none;">भारतीय जनता पार्टी - काकीनाडा</h1>
+<h1 id="text-en" style="display:none;">Bharatiya Janata Party – Kakinada</h1>
+
+<button onclick="showLang('te')">తెలుగు</button>
+<button onclick="showLang('hi')">हिन्दी</button>
+<button onclick="showLang('en')">English</button>
+
 <script>
-async function translateText(text, sourceLang, targetLang) {
-  const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=YOUR_API_KEY`, {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      q: text,
-      source: sourceLang,
-      target: targetLang,
-      format: 'text'
-    })
-  });
-  const data = await response.json();
-  return data.data.translations[0].translatedText;
+function showLang(lang) {
+  document.getElementById('text-te').style.display = 'none';
+  document.getElementById('text-hi').style.display = 'none';
+  document.getElementById('text-en').style.display = 'none';
+  document.getElementById('text-' + lang).style.display = 'block';
 }
-
-// Example usage:
-translateText("నమస్కారం", "te", "hi").then(result => console.log("Telugu → Hindi:", result));
-translateText("नमस्कार", "hi", "en").then(result => console.log("Hindi → English:", result));
 </script>
-
-
-  <style>
+<style>
     /* Reset */
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}/* Full-screen background */
